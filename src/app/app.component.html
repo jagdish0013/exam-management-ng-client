@@ -1,0 +1,12 @@
+<div id="app">
+  <div class="container">
+    
+    <ng-container *ngIf="isLoggedIn">
+      <app-header></app-header>
+      <app-navemenu></app-navemenu>
+    </ng-container>
+    
+    <router-outlet></router-outlet>
+    
+  </div>
+</div>

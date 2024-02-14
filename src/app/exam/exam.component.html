@@ -1,0 +1,68 @@
+<!-- Main Content -->
+<div class="main-content">
+    <section class="section">
+        <div class="section-body">
+            <!-- add content here -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Exam Management</h4>
+                            <div class="card-header">
+                                <div class="input-group">
+                                    <div class="input-group-btn" style="padding-left: 95%;">
+                                        <button class="btn btn-primary" (click)="addExam('new')">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4></h4>
+                            <div class="card-header-form">
+                                <form>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" (blur)="searchfun($event);" placeholder="Search">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-primary" ><i class="fas fa-search"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <tr>
+                                        <th>Exam Name</th>
+                                        <th>Description</th>
+                                        <th>Date Time</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    <tr *ngFor="let m of getExamData">
+                                        <td>{{m.exam_name}}</td>
+                                        <td>{{m.description}}</td>
+                                        <td>{{m.dateTime |  date: 'yyyy-MM-dd HH:mm:ss'}}</td>
+                                        
+                                        
+                                        <td>
+                                            <a style="cursor:pointer;color: darkorange;" (click)="addExam(m._id)"><i class="fas fa-edit"></i></a>
+                                            <a style="cursor:pointer;color: red;margin-left: 10%;" (click)="deleteExam(m._id)"><i class="fas fa-trash-alt"></i></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div>

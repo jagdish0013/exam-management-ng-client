@@ -1,0 +1,28 @@
+<div class="main-sidebar sidebar-style-2">
+    <aside id="sidebar-wrapper">
+      <div class="sidebar-brand">
+        <a routerLink="/user/dashboard"> <img alt="image" src="assets/img/logo.png" class="header-logo"/>&nbsp;
+          <span class="logo-name">School</span>
+        </a>
+      </div>
+      <ul class="sidebar-menu">
+        <li class="menu-header">Main</li>
+        <li class="dropdown">
+          <a routerLink="/user/dashboard" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
+        </li>
+        <li class="dropdown" *ngIf="roles == 'admin'">
+          <a routerLink="/user/user" class="nav-link"><i data-feather="monitor"></i><span>User</span></a>
+        </li>
+        <li class="dropdown" *ngIf="roles == 'admin'">
+          <a routerLink="/user/subject" class="nav-link"><i data-feather="monitor"></i><span>Subject</span></a>
+        </li>
+        <li class="dropdown" >
+          <a routerLink="/user/exam" class="nav-link"><i data-feather="monitor"></i><span>Exam</span></a>
+        </li>
+        <li class="dropdown" >
+          <a class="nav-link"><i data-feather="monitor"></i><span>Exam question and answer</span></a>
+        </li>
+       
+      </ul>
+    </aside>
+  </div>  
